@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>FitApp - Mobile App HTML Template</title>
+    <title>Thacoowin</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -33,45 +33,45 @@
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="51">
     <div class="container-xxl bg-white p-0">
-      <div class="container-xxl py-5" id="contact">
-        <div class="container py-5 px-lg-5">
+      <div class="container-xxl" id="contact">
+        <div class="container px-lg-5 pt-5">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h5 class="text-primary-gradient fw-medium">Contact Us</h5>
-                <h1 class="mb-5">Get In Touch!</h1>
+                <h5 class="text-primary-gradient fw-medium">Thacoowin</h5>
+                <h1 class="mb-5">Đăng ký</h1>
             </div>
             <div class="row justify-content-center">
-                <div class="col-lg-9">
+                <div class="col-lg-5">
+                    <?php 
+                        var_dump(Session('flash_message'));
+                    ?>
+                    @include('fitapp.shared.flash_message')
                     <div class="wow fadeInUp" data-wow-delay="0.3s">
-                        <p class="text-center mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
                         <form method="post" action="/sign-up">
                             @csrf <!-- {{ csrf_field() }} -->
                             <div class="row g-3">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                        <label for="name">Your Name</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                        <label for="email">Your Email</label>
+                                        <input name="phone" type="text" class="form-control" id="phone" placeholder="Số điện thoại">
+                                        <label for="email">Số điện thoại</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                        <label for="subject">Subject</label>
+                                        <input name="password" type="password" class="form-control" id="password" placeholder="Mật khẩu">
+                                        <label for="password">Mật khẩu</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
-                                        <label for="message">Message</label>
+                                      <input type="password" class="form-control" id="passwordConfirmation" placeholder="Mật khẩu">
+                                      <label for="passwordConfirmation">Nhập lại mật khẩu </label>
                                     </div>
                                 </div>
                                 <div class="col-12 text-center">
-                                    <button class="btn btn-primary-gradient rounded-pill py-3 px-5" type="submit">Send Message</button>
+                                    <button class="btn btn-primary-gradient rounded-pill py-3 px-5" type="submit">Đăng ký</button>
+                                </div>
+                                <div class="col-12 text-center">
+                                  Đã có tài khoản? <a href="/sign-up"> Đăng nhập tại đây </a>
                                 </div>
                             </div>
                         </form>
@@ -79,10 +79,7 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up text-white"></i></a>
+        @include('fitapp.shared.footer')
     </div>
 
     <!-- JavaScript Libraries -->
